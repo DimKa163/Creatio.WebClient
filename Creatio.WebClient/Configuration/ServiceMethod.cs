@@ -1,15 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Creatio.WebClient.Configuration
+﻿namespace Creatio.WebClient.Configuration
 {
+    /// <summary>
+    /// Request types
+    /// </summary>
     public enum ServiceMethod
     {
+        /// <summary>
+        /// Get method
+        /// </summary>
         Get,
-        Post,
-        Put,
-        Patch,
-        Delete
+        /// <summary>
+        /// Post method
+        /// </summary>
+        Post
     }
 }

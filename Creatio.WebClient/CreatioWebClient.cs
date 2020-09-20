@@ -84,11 +84,41 @@
             }
             throw new Exception(result.ErrorMessage);
         }
-
-        public object CallConfigurationService(string serviceName, string serviceMethodName, ServiceMethod method = ServiceMethod.Post, params object[] arguments)
+        /// <summary>
+        /// Call a REST service, which require authorization
+        /// </summary>
+        /// <param name="serviceName">Service name</param>
+        /// <param name="serviceMethodName">service method name</param>
+        /// <param name="method">Request type</param>
+        /// <param name="parameters">Parameters</param>
+        /// <returns>JSON string</returns>
+        public string CallConfigurationService(string serviceName, string serviceMethodName, 
+            ServiceMethod method = ServiceMethod.Post, ParameterCollection parameters = null)
         {
             Uri uri = new Uri($"{_url}/0/rest/{serviceName}/{serviceMethodName}");
-            throw new NotImplementedException();
+            HttpClient client = null;
+            Result result = null;
+            switch (method)
+            {
+                case ServiceMethod.Get:
+                    client = new HttpClient(uri);
+                    break;
+                case ServiceMethod.Post:
+                    client = new HttpClient(uri);
+                    string json = string.Empty;
+                    if (parameters != null)
+                        json = BodyBuilder.Serialize(parameters);
+                    result = client.Post(json);
+                    break;
+                default:
+                    break;
+            }
+            if (result != null && result.Success)
+            {
+                HttpWebResponse response = result.HttpWebResponse;
+                return GetEntity<string>(response.GetResponseStream());
+            }
+            throw new Exception(result.ErrorMessage);
         }
         #region Private methods
         private TEntity GetEntity<TEntity>(Stream stream) where TEntity : class

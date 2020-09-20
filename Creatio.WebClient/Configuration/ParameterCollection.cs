@@ -3,10 +3,21 @@
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
+    using System;
 
     public class ParameterCollection : IEnumerable, IEnumerable<Parameter>
     {
         private Parameter[] _parameters;
+
+        public Parameter this[int index]
+        {
+            get
+            {
+                if (index > Count - 1)
+                    throw new ArgumentOutOfRangeException();
+                return _parameters[index];
+            }
+        }
 
         public int Count
         {
@@ -54,6 +65,11 @@
             return true;
         }
 
+        public void Clear()
+        {
+            _parameters = new Parameter[0];
+        }
+
         public IEnumerator<Parameter> GetEnumerator()
         {
             for (int i = 0; i < _parameters.Length; i++)
@@ -66,7 +82,5 @@
         {
             return _parameters.GetEnumerator();
         }
-
-        //private void CreateNewArray
     }
 }
