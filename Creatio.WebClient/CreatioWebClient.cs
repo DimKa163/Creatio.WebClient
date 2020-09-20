@@ -92,8 +92,8 @@
         /// <param name="method">Request type</param>
         /// <param name="parameters">Parameters</param>
         /// <returns>JSON string</returns>
-        public string CallConfigurationService(string serviceName, string serviceMethodName, 
-            ServiceMethod method = ServiceMethod.Post, ParameterCollection parameters = null)
+        public TEntity CallConfigurationService<TEntity>(string serviceName, string serviceMethodName, 
+            ServiceMethod method = ServiceMethod.Post, ParameterCollection parameters = null) where TEntity : class
         {
             Uri uri = new Uri($"{_url}/0/rest/{serviceName}/{serviceMethodName}");
             HttpClient client = null;
@@ -101,7 +101,10 @@
             switch (method)
             {
                 case ServiceMethod.Get:
+                    if (parameters != null)
+                        uri = new Uri($"{_url}/0/rest/{serviceName}/{serviceMethodName}?{UrlParameterBuilder.Serialize(parameters)}");
                     client = new HttpClient(uri);
+                    result = client.Get();
                     break;
                 case ServiceMethod.Post:
                     client = new HttpClient(uri);
@@ -116,7 +119,7 @@
             if (result != null && result.Success)
             {
                 HttpWebResponse response = result.HttpWebResponse;
-                return GetEntity<string>(response.GetResponseStream());
+                return GetEntity<TEntity>(response.GetResponseStream());
             }
             throw new Exception(result.ErrorMessage);
         }
