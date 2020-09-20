@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Dmitry Martynov</Authors>
+    <Product>Creatio.WebClient</Product>
+    <Copyright>Dmitry Martynov 2020</Copyright>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>F:\C#\NET Core\Creatio.WebClient\Creatio.WebClient\Creatio.WebClient.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Configuration\Parameter.cs~RF1b617c48.TMP" />
+    <None Remove="Configuration\ParameterCollection.cs~RF1b8fe459.TMP" />
+    <None Remove="CreatioWebClient.cs~RF1b5cee15.TMP" />
+    <None Remove="HttpClient.cs~RF1454e5cb.TMP" />
+    <None Remove="HttpClient.cs~RF145cf5b3.TMP" />
+    <None Remove="Responses\LoginResponse.cs~RF14822673.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+</Project>

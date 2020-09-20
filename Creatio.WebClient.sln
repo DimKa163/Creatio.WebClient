@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30128.74
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Creatio.WebClient", "Creatio.WebClient\Creatio.WebClient.csproj", "{B23195BF-31ED-4BEF-B761-A8CD146D58ED}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Creatio.WebClient.Test", "Creatio.WebClient.Test\Creatio.WebClient.Test.csproj", "{DD982151-B842-4969-B810-9D66C457A9FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B23195BF-31ED-4BEF-B761-A8CD146D58ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B23195BF-31ED-4BEF-B761-A8CD146D58ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B23195BF-31ED-4BEF-B761-A8CD146D58ED}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{B23195BF-31ED-4BEF-B761-A8CD146D58ED}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{B23195BF-31ED-4BEF-B761-A8CD146D58ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B23195BF-31ED-4BEF-B761-A8CD146D58ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B23195BF-31ED-4BEF-B761-A8CD146D58ED}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{B23195BF-31ED-4BEF-B761-A8CD146D58ED}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{DD982151-B842-4969-B810-9D66C457A9FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD982151-B842-4969-B810-9D66C457A9FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD982151-B842-4969-B810-9D66C457A9FF}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{DD982151-B842-4969-B810-9D66C457A9FF}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{DD982151-B842-4969-B810-9D66C457A9FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD982151-B842-4969-B810-9D66C457A9FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD982151-B842-4969-B810-9D66C457A9FF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{DD982151-B842-4969-B810-9D66C457A9FF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7F3B9080-9BC5-4462-8EEA-117205BF89EC}
+	EndGlobalSection
+EndGlobal
