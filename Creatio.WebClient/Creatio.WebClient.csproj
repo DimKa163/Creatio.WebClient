@@ -6,6 +6,11 @@
     <Authors>Dmitry Martynov</Authors>
     <Product>Creatio.WebClient</Product>
     <Copyright>Dmitry Martynov 2020</Copyright>
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
+    <FileVersion>1.1.0.0</FileVersion>
+    <Version>1.0.1</Version>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/DimKa163/Creatio.WebClient</RepositoryUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
