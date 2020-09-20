@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="CallConfigurationServiceTest.cs~RF1c70e184.TMP" />
     <None Remove="ParameterCollectionTest.cs~RF1b952580.TMP" />
   </ItemGroup>
 

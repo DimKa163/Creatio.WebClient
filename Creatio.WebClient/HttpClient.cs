@@ -1,14 +1,11 @@
 ﻿namespace Creatio.WebClient
 {
-    using System;
-    using System.Collections;
-    using System.IO;
-    using System.Linq;
-    using System.Net;
-    using System.Reflection;
     using Creatio.WebClient.Requests;
     using Creatio.WebClient.Responses;
     using Newtonsoft.Json;
+    using System;
+    using System.IO;
+    using System.Net;
 
     internal class HttpClient
     {
@@ -34,6 +31,27 @@
                 foreach (Cookie cookie in response.Cookies)
                     if (cookie.Name == "BPMCSRF")
                         _bpmCsrf = cookie.Value;
+            }
+            return result;
+        }
+        /// <summary>
+        /// Make GET request
+        /// </summary>
+        /// <returns>Return object "Result"</returns>
+        public Result Get()
+        {
+            Result result = new Result();
+            HttpWebRequest request = CreateHttpWebRequest("GET");
+            try
+            {
+                HttpWebResponse response = request.GetResponse() as HttpWebResponse;
+                result.HttpWebResponse = response;
+            }
+            catch (WebException ex)
+            {
+                result.Success = false;
+                result.ErrorMessage = ex.Message;
+                result.HttpWebResponse = ex.Response as HttpWebResponse;
             }
             return result;
         }

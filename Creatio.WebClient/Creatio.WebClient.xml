@@ -4,6 +4,69 @@
         <name>Creatio.WebClient</name>
     </assembly>
     <members>
+        <member name="T:Creatio.WebClient.Configuration.BodyBuilder">
+            <summary>
+            Serialize ParameterCollection to JSON string
+            </summary>
+        </member>
+        <member name="M:Creatio.WebClient.Configuration.BodyBuilder.#ctor(Creatio.WebClient.Configuration.ParameterCollection)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="parameters">Parameter collection</param>
+        </member>
+        <member name="M:Creatio.WebClient.Configuration.BodyBuilder.Serialize">
+            <summary>
+            Serialize parameter to JSON-format
+            </summary>
+            <returns>JSON-string</returns>
+        </member>
+        <member name="M:Creatio.WebClient.Configuration.BodyBuilder.Serialize(Creatio.WebClient.Configuration.ParameterCollection)">
+            <summary>
+            Serialize parameter to JSON-format
+            </summary>
+            <param name="parameters">Parameter collection</param>
+            <returns>JSON-string</returns>
+        </member>
+        <member name="T:Creatio.WebClient.Configuration.ServiceMethod">
+            <summary>
+            Request types
+            </summary>
+        </member>
+        <member name="F:Creatio.WebClient.Configuration.ServiceMethod.Get">
+            <summary>
+            Get method
+            </summary>
+        </member>
+        <member name="F:Creatio.WebClient.Configuration.ServiceMethod.Post">
+            <summary>
+            Post method
+            </summary>
+        </member>
+        <member name="T:Creatio.WebClient.Configuration.UrlParameterBuilder">
+            <summary>
+            Serialize ParameterCollection to Url string
+            </summary>
+        </member>
+        <member name="M:Creatio.WebClient.Configuration.UrlParameterBuilder.#ctor(Creatio.WebClient.Configuration.ParameterCollection)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="parameters">Parameter collection</param>
+        </member>
+        <member name="M:Creatio.WebClient.Configuration.UrlParameterBuilder.Serialize">
+            <summary>
+            Serialize parameter to URL-format
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Creatio.WebClient.Configuration.UrlParameterBuilder.Serialize(Creatio.WebClient.Configuration.ParameterCollection)">
+            <summary>
+            Serialize parameter to JSON-format
+            </summary>
+            <param name="parameters">Parameter collection</param>
+            <returns>JSON-string</returns>
+        </member>
         <member name="T:Creatio.WebClient.CreatioWebClient">
             <summary>
             Send request to Creatio
@@ -35,11 +98,27 @@
             </summary>
             <returns>Returns package operation response object</returns>
         </member>
+        <member name="M:Creatio.WebClient.CreatioWebClient.CallConfigurationService``1(System.String,System.String,Creatio.WebClient.Configuration.ServiceMethod,Creatio.WebClient.Configuration.ParameterCollection)">
+            <summary>
+            Call a REST service, which require authorization
+            </summary>
+            <param name="serviceName">Service name</param>
+            <param name="serviceMethodName">service method name</param>
+            <param name="method">Request type</param>
+            <param name="parameters">Parameters</param>
+            <returns>JSON string</returns>
+        </member>
         <member name="M:Creatio.WebClient.HttpClient.Login(Creatio.WebClient.Requests.Login)">
             <summary>
             Login under the current user
             </summary>
             <param name="login">Authorization request object</param>
+        </member>
+        <member name="M:Creatio.WebClient.HttpClient.Get">
+            <summary>
+            Make GET request
+            </summary>
+            <returns>Return object "Result"</returns>
         </member>
         <member name="M:Creatio.WebClient.HttpClient.Post(System.String)">
             <summary>

@@ -1,42 +1,40 @@
 ﻿namespace Creatio.WebClient.Configuration
 {
-    using Newtonsoft.Json;
     using System.Text;
     /// <summary>
-    /// Serialize ParameterCollection to JSON string
+    /// Serialize ParameterCollection to Url string
     /// </summary>
-    public class BodyBuilder : ArgumentBuilder
+    public class UrlParameterBuilder : ArgumentBuilder
     {
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="parameters">Parameter collection</param>
-        public BodyBuilder(ParameterCollection parameters) : base(parameters)
+        public UrlParameterBuilder(ParameterCollection parameters) : base(parameters)
         {
+
         }
         /// <summary>
-        /// Serialize parameter to JSON-format
+        /// Serialize parameter to URL-format
         /// </summary>
-        /// <returns>JSON-string</returns>
-        public  sealed override string Serialize()
+        /// <returns></returns>
+        public sealed override string Serialize()
         {
             StringBuilder stringBuilder = new StringBuilder();
             for (int i = 0; i < Parameters.Count; i++)
             {
                 if (i == (Parameters.Count - 1))
-                    stringBuilder.Append(CreateJsonProperty(Parameters[i]));
+                    stringBuilder.Append(CreateUrlParameter(Parameters[i]));
                 else
-                    stringBuilder.Append($"{CreateJsonProperty(Parameters[i])},");
+                    stringBuilder.Append($",{CreateUrlParameter(Parameters[i])}");
             }
-            string json = "{" + stringBuilder.ToString() + "\n}";
-            return json;
+            return stringBuilder.ToString();
         }
 
         #region Private methods
-        private string CreateJsonProperty(Parameter parameter)
+        private string CreateUrlParameter(Parameter parameter)
         {
-            string property = $"\n\"{parameter.Name}\": {JsonConvert.SerializeObject(parameter.Value)}";
-            return property;
+            return $"{parameter.Name}={parameter.Value}";
         }
         #endregion
         /// <summary>
@@ -46,8 +44,8 @@
         /// <returns>JSON-string</returns>
         public static string Serialize(ParameterCollection parameters)
         {
-            BodyBuilder bodyBuilder = new BodyBuilder(parameters);
-            return bodyBuilder.Serialize();
+            UrlParameterBuilder urlBuilder = new UrlParameterBuilder(parameters);
+            return urlBuilder.Serialize();
         }
     }
 }
