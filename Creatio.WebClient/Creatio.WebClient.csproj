@@ -13,8 +13,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Configuration\BodyBuilder.cs~RF1bd19fcd.TMP" />
     <None Remove="Configuration\Parameter.cs~RF1b617c48.TMP" />
     <None Remove="Configuration\ParameterCollection.cs~RF1b8fe459.TMP" />
+    <None Remove="Configuration\ServiceMethod.cs~RF1be853a1.TMP" />
     <None Remove="CreatioWebClient.cs~RF1b5cee15.TMP" />
     <None Remove="HttpClient.cs~RF1454e5cb.TMP" />
     <None Remove="HttpClient.cs~RF145cf5b3.TMP" />
