@@ -1,13 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Dmitry Martynov</Authors>
     <Product>Creatio.WebClient</Product>
     <Copyright>Dmitry Martynov 2020</Copyright>
-    <AssemblyVersion>1.1.0.0</AssemblyVersion>
-    <FileVersion>1.1.0.0</FileVersion>
+    <AssemblyVersion>1.1.1.2</AssemblyVersion>
+    <FileVersion>1.1.1.2</FileVersion>
     <Version>1.0.1</Version>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/DimKa163/Creatio.WebClient</RepositoryUrl>
